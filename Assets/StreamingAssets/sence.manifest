@@ -1,0 +1,14 @@
+ManifestFileVersion: 0
+CRC: 2123054019
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 32af707e58dd3ef1fd91ec29e195543a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 31d6cfe0d16ae931b73c59d7e0c089c0
+HashAppended: 0
+ClassTypes: []
+Assets:
+- Assets/Scene/CSCallLua.unity
+Dependencies: []

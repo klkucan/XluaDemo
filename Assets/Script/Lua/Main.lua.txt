@@ -1,0 +1,12 @@
+require ("CubeCtrl")
+
+Main = {}
+
+Main.a=  "main a"
+Main.b= 1
+ 
+function Main.foo()
+    return "main"
+end
+
+return Main

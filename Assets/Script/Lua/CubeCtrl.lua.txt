@@ -1,0 +1,10 @@
+CubeCtrl = {}
+
+CubeCtrl.a = "cube a"
+CubeCtrl.b = 1
+ 
+function CubeCtrl.foo()
+    return 3
+end
+
+return CubeCtrl
