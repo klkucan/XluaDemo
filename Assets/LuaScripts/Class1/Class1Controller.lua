@@ -1,0 +1,96 @@
+require("CommonFunc")
+
+-- 场景内游戏对象
+local btnStart
+local btnStop
+local cube1,cube2,cube3
+
+-- 本地变量
+local turn = false
+local GameObject = CS.UnityEngine.GameObject
+local fileName = "Class1Controller"
+
+
+-- local method
+
+local function BtnClick(button)
+	if button.name == nil then
+		CommonFunc.printLog(fileName,"button.name == nil")
+		return
+	else
+		CommonFunc.printLog(fileName,button.name)
+	end
+	
+	if button.name == "btnStart" then
+		turn = true
+	else
+		turn = false
+	end
+end
+
+function AddButtonOnClickListener(button)
+	button:GetComponent("Button").onClick:AddListener(
+	function ()
+		if button.name == nil then
+			CommonFunc.printLog(fileName,"button.name == nil")
+			return
+		else
+			CommonFunc.printLog(fileName,button.name)
+		end
+		
+		if button.name == "btnStart" then
+			turn = true
+		else
+			turn = false
+		end
+	end
+	)
+end
+
+
+-- Class1Controller
+
+Class1Controller = {}
+
+
+function Class1Controller.awake()
+	CommonFunc.printLog(fileName,"awake")
+end
+
+function Class1Controller.start()
+	CommonFunc.printLog(fileName,"start")
+	
+	-- 获取cube
+	local cubes = GameObject.Find("Cubes")
+	
+	
+	cube1 = cubes.transform:Find("Cube1").gameObject
+	cube2 = cubes.transform:Find("Cube2").gameObject
+	cube3 = cubes.transform:Find("Cube3").gameObject
+	-- 获取按钮对象
+	local canvas = GameObject.Find("Canvas")
+	btnStart = canvas.transform:Find("btnStart").gameObject
+	btnStart.transform:Find("Text"):GetComponent("Text").text = "Start Turn"
+	btnStop = canvas.transform:Find("btnStop").gameObject
+	btnStop.transform:Find("Text"):GetComponent("Text").text = "Stop Turn"
+	-- 添加点击事件
+	AddButtonOnClickListener(btnStart)
+	AddButtonOnClickListener(btnStop)
+	
+end
+
+function Class1Controller.update()
+	if turn == true then
+		CommonFunc.printLog(fileName,"update -> start turn")
+		cube1.transform:Rotate(CS.UnityEngine.Vector3.up, CS.UnityEngine.Time.deltaTime*5);
+		cube2.transform:Rotate(CS.UnityEngine.Vector3.up, CS.UnityEngine.Time.deltaTime*5);
+		cube3.transform:Rotate(CS.UnityEngine.Vector3.up, CS.UnityEngine.Time.deltaTime*5);
+	end
+end
+
+function Class1Controller.ondestroy()
+	CommonFunc.printLog(fileName,"destroy")
+end
+
+return Class1Controller
+

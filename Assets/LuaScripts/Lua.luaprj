@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Project Name="Lua.luaprj" Cmd="" Arg="" Dir="" Toggle="false" >
+    <Filter Name="Class1" Directory=".\Class1" Toggle="false" >
+        <LuaFile RelativePath=".\Class1\Class1Controller.lua" />
+    </Filter>
+    <Filter Name="Main" Directory=".\Main" Toggle="false" >
+        <LuaFile RelativePath=".\Main\MainUI.lua" />
+    </Filter>
+    <LuaFile RelativePath=".\CommonFunc.lua" />
+</Project>

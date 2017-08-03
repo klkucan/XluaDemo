@@ -1,3 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<Project Name="Lua.luaprj" Cmd="" Arg="" Dir="" Toggle="true" />
+<Project Name="Lua.luaprj" Cmd="" Arg="" Dir="" Toggle="false" >
+    <Filter Name="Class1" Directory=".\Class1" Toggle="false" >
+        <LuaFile RelativePath=".\..\..\LuaScripts\Class1\Class1.lua" />
+    </Filter>
+    <Filter Name="Main" Directory=".\Main" Toggle="false" >
+        <LuaFile RelativePath=".\..\..\LuaScripts\Main\GameRoot.lua" />
+        <LuaFile RelativePath=".\..\..\LuaScripts\Main\MainUI.lua" />
+    </Filter>
+</Project>
